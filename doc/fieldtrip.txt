@@ -1,0 +1,36 @@
+*fieldtrip.txt*       submode for sideways
+*fieldtrip*
+===============================================================================
+CONTENTS                                                   *fieldtrip-contents*
+
+    1. Intro........................................|fieldtrip-intro|
+    2. Options......................................|fieldtrip-options|
+
+===============================================================================
+INTRO                                                         *fieldtrip-intro*
+
+fieldtrip is a combination of the plugins http://github.com/kana/vim-submode
+and http://github.com/AndrewRadev/sideways.vim .
+
+By pressing |fieldtrip_start_map|, vim enters a sideways submode.
+h and l are then temporarily mapped to |:SidewaysLeft| and |:SidewaysRight|.
+d will delete the motion |<Plug>SidewaysArgumentTextobjA|, x deletes the
+"inner" variant |<Plug>SidewaysArgumentTextobjI|.
+By default, <esc> exits the submode. Consult the submode doc for more options,
+especially for preventing the automatic exit after 'timeout' ms of idling.
+
+===============================================================================
+OPTIONS                                                     *fieldtrip-options*
+
+  |fieldtrip_start_map|............The key sequence entering the submode
+
+===============================================================================
+CREDITS                                                     *fieldtrip-credits*
+
+Developed by Torsten Schmits <github.com/tek>. Distributed under the MIT
+license.
+
+Git repository:       https://github.com/tek/vim-fieldtrip
+
+==============================================================================
+vim:ft=help:et:ts=2:sw=2:sts=2:norl
