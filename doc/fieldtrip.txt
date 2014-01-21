@@ -13,9 +13,11 @@ fieldtrip is a combination of the plugins http://github.com/kana/vim-submode
 and http://github.com/AndrewRadev/sideways.vim .
 
 By pressing |fieldtrip_start_map|, vim enters a sideways submode.
-h and l are then temporarily mapped to |:SidewaysLeft| and |:SidewaysRight|.
+H and L are then temporarily mapped to |:SidewaysLeft| and |:SidewaysRight|,
+h and l will cycle through the fields.
 d will delete the motion |<Plug>SidewaysArgumentTextobjA|, x deletes the
-"inner" variant |<Plug>SidewaysArgumentTextobjI|.
+"inner" variant |<Plug>SidewaysArgumentTextobjI| and wWbBu will work as
+expected.
 By default, <esc> exits the submode. Consult the submode doc for more options,
 especially for preventing the automatic exit after 'timeout' ms of idling.
 
@@ -23,6 +25,12 @@ especially for preventing the automatic exit after 'timeout' ms of idling.
 OPTIONS                                                     *fieldtrip-options*
 
   |fieldtrip_start_map|............The key sequence entering the submode
+  |fieldtrip_left|.................Mapping for moving a field to the left
+  |fieldtrip_right|................Mapping for moving a field to the right
+  |fieldtrip_jump_left|.... .......Mapping for cycling to the left
+  |fieldtrip_jump_right|...........Mapping for cycling to the right
+  |fieldtrip_delete_a|.............Mapping for deleting a field with delimiter
+  |fieldtrip_delete_i|.............Mapping for deleting a field without delimiter
 
 ===============================================================================
 CREDITS                                                     *fieldtrip-credits*

@@ -14,12 +14,18 @@ if !exists('g:fieldtrip_start_map')
   finish
 endif
 
+for [key, value] in items(g:fieldtrip_defaults)
+  let g:fieldtrip_{key} = get(g:, 'fieldtrip_'.key, value)
+endfor
+
 call submode#enter_with('fieldtrip', 'n', '', g:fieldtrip_start_map, '<nop>')
-call submode#map('fieldtrip', 'n', '', 'h', ':SidewaysLeft<cr>')
-call submode#map('fieldtrip', 'n', '', 'l', ':SidewaysRight<cr>')
-call submode#map('fieldtrip', 'n', 'rs', 'd', 'd<Plug>SidewaysArgumentTextobjA')
-call submode#map('fieldtrip', 'n', 'rs', 'x', 'd<Plug>SidewaysArgumentTextobjI')
-call submode#map('fieldtrip', 'n', 'rs', 'c', 'c<Plug>SidewaysArgumentTextobjI')
+call submode#map('fieldtrip', 'n', '', g:fieldtrip_left, ':SidewaysLeft<cr>')
+call submode#map('fieldtrip', 'n', '', g:fieldtrip_right, ':SidewaysRight<cr>')
+call submode#map('fieldtrip', 'n', '', g:fieldtrip_jump_left, ':SidewaysJumpLeft<cr>')
+call submode#map('fieldtrip', 'n', '', g:fieldtrip_jump_right, ':SidewaysJumpRight<cr>')
+call submode#map('fieldtrip', 'n', 'rs', g:fieldtrip_delete_a, 'd<Plug>SidewaysArgumentTextobjA')
+call submode#map('fieldtrip', 'n', 'rs', g:fieldtrip_delete_i, 'd<Plug>SidewaysArgumentTextobjI')
+call submode#map('fieldtrip', 'n', 'rs', g:fieldtrip_change, 'c<Plug>SidewaysArgumentTextobjI')
 call submode#map('fieldtrip', 'n', 'r', 'w', 'w')
 call submode#map('fieldtrip', 'n', 'r', 'W', 'W')
 call submode#map('fieldtrip', 'n', 'r', 'b', 'b')
