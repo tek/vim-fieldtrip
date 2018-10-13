@@ -8,7 +8,20 @@ let g:fieldtrip_defaults = {
       \ 'change': 'c',
       \ }
 
+" neobundle
 if exists(':NeoBundleDepends')
   NeoBundleDepends 'AndrewRadev/sideways.vim'
   NeoBundleDepends 'kana/vim-submode'
+endif
+
+" plug
+if exists(':PlugInstall')
+  PlugInstall 'AndrewRadev/sideways.vim'
+  PlugInstall 'kana/vim-submode'
+endif
+
+" vundle
+if exists(':PluginInstall')
+  PluginInstall 'AndrewRadev/sideways.vim'
+  PluginInstall 'kana/vim-submode'
 endif
